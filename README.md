@@ -1,29 +1,32 @@
-#Books and Reviews API
+# Books and Reviews API
 
 This is a simple RESTful API built using Node.js and Express.js for managing books and their reviews.
 
-##Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-##Prerequisites
+## Prerequisites
 
 Node.js - JavaScript runtime
 npm - Package manager for JavaScript
 
-##Installation
+## Installation
 
 1. Clone the repository
-`git clone https://github.com/your_username/BooksAndReviewsAPI.git`
-Navigate to the project folder
+`git clone https://github.com/DeepKross/express.git`
 
-Install dependencies
+2. Navigate to the project folder
+
+3. Install dependencies
 `npm install`
-Start the server
+
+4. Start the server
 `npm run dev`
+
 The server should be running on http://localhost:3000.
 
-##API Endpoints
+## API Endpoints
 | HTTP Method | Endpoint | Description |
 | -----------| -------- | ----------- |
 | POST | /books | Create a new book |
