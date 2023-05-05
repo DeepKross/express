@@ -1,12 +1,10 @@
-let books = require('../database/data.js');
+import BookService from "../services/BookService.js";
 class BookController {
-    constructor() {
-        this.books = books;
-    }
 
     getBooks(req, res) {
         try{
-            res.status(200).json(this.books);
+            let books = BookService.getBooks();
+            res.status(200).json(books);
         }catch (e){
             res.status(500).json(e.message);
         }
@@ -14,7 +12,8 @@ class BookController {
 
     getBook(req, res) {
         try{
-            res.status(200).json(this.books[req.params.id]);
+            let book = BookService.getBook(req.params.id);
+            res.status(200).json(book);
         }catch (e){
             res.status(500).json(e.message);
         }
@@ -22,8 +21,9 @@ class BookController {
 
     addBook(req, res) {
         try{
-            this.books.push(req.body);
-            res.status(200).json(this.books);
+            //add a book to the books object
+            let books = BookService.addBooks(req.body);
+            res.status(200).json(books);
         }catch (e){
             res.status(500).json(e.message);
         }
@@ -31,8 +31,49 @@ class BookController {
 
     deleteBook(req, res) {
         try{
-            this.books.splice(req.params.id, 1);
-            res.status(200).json(this.books);
+            //delete a book from the books object with the id
+            let books = BookService.deleteBook(req.params.id);
+            res.status(200).json(books);
+        }catch (e){
+            res.status(500).json(e.message);
+        }
+    }
+
+    updateTitle(req, res) {
+        try{
+            //update a book title from the books object with the id
+            let books = BookService.updateTitle(req.query);
+            res.status(200).json(books);
+        }catch (e){
+            res.status(500).json(e.message);
+        }
+    }
+
+    addReview(req, res) {
+        try{
+            //add a review to a book from the books object with the id
+            let books = BookService.addReview(req.params.id, req.body);
+            res.status(200).json(books);
+        }catch (e){
+            res.status(500).json(e.message);
+        }
+    }
+
+    deleteReview(req, res) {
+        try{
+            //delete a review from a book from the books object with the id
+            let books = BookService.deleteReview(req.params.id, req.params.reviewId);
+            res.status(200).json(books);
+        }catch (e){
+            res.status(500).json(e.message);
+        }
+    }
+
+    getReviews(req, res) {
+        try{
+            //get all reviews from a book from the books object with the id
+            let reviews = BookService.getReviews(req.params.id);
+            res.status(200).json(reviews);
         }catch (e){
             res.status(500).json(e.message);
         }
