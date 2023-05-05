@@ -1,14 +1,19 @@
 #Books and Reviews API
+
 This is a simple RESTful API built using Node.js and Express.js for managing books and their reviews.
 
 ##Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ##Prerequisites
+
 Node.js - JavaScript runtime
 npm - Package manager for JavaScript
+
 ##Installation
-Clone the repository
+
+1. Clone the repository
 `git clone https://github.com/your_username/BooksAndReviewsAPI.git`
 Navigate to the project folder
 
